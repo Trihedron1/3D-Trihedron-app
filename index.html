@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trihedron | Engineering Solutions Group</title>
+  <meta name="description" content="Explore Trihedron Engineering Solutions Group in 3D: three facets, a global footprint, our track record and the solutions we offer.">
+  <meta name="theme-color" content="#03050a">
+  <link rel="icon" href="assets/trihedron-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">
+    { "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    } }
+  </script>
+  <script type="module" src="js/scene.js"></script>
+</head>
+<body>
+  <canvas id="scene" tabindex="0" aria-label="Interactive 3D Trihedron logo. Scroll to explore; click a facet or press Enter for details; drag to rotate."></canvas>
+
+  <div class="loader" id="loader" aria-hidden="true">
+    <img src="assets/trihedron-mark.svg" alt="" width="44" height="50">
+    <span>Loading</span>
+  </div>
+
+  <a class="brand" href="https://www.trihedron.co.za/" aria-label="Trihedron home">
+    <img src="assets/trihedron-mark.svg" alt="" width="26" height="29">
+    <span>Trihedron</span>
+  </a>
+  <a class="top-cta" href="https://www.trihedron.co.za/contact-us/">Request a callback</a>
+
+  <!-- Chapter navigator -->
+  <nav class="chapters" aria-label="Chapters">
+    <button type="button" data-chapter="0"><span>Intro</span></button>
+    <button type="button" data-chapter="1"><span>Three facets</span></button>
+    <button type="button" data-chapter="2"><span>Global footprint</span></button>
+    <button type="button" data-chapter="3"><span>Track record</span></button>
+    <button type="button" data-chapter="4"><span>Solutions</span></button>
+    <button type="button" data-chapter="5"><span>Contact</span></button>
+  </nav>
+
+  <!-- Labels pinned to the 3D model (facets + globe countries are added by scene.js) -->
+  <div class="labels" id="labels" aria-hidden="true">
+    <div class="label" data-facet="top"><em>01</em><b>Metrology</b><span>Measurement technology &amp; inspection</span></div>
+    <div class="label" data-facet="left"><em>02</em><b>Automation</b><span>PLC, robotics &amp; controls</span></div>
+    <div class="label" data-facet="right"><em>03</em><b>Artisans</b><span>Mechanical &amp; electrical trades</span></div>
+    <div class="label" data-facet="core"><em>Core</em><b>People first</b><span>Vetted, reliable, matched to fit</span></div>
+  </div>
+
+  <!-- Facet detail panel (filled by scene.js) -->
+  <aside class="panel" id="panel" aria-hidden="true" aria-labelledby="panel-title">
+    <button class="panel__close" type="button" id="panel-close" aria-label="Close">×</button>
+    <div class="panel__body" id="panel-body"></div>
+  </aside>
+
+  <div class="hint" id="hint" aria-hidden="true">
+    <span class="hint__mouse"><i></i></span>
+    <span>Scroll to explore · Drag to rotate · Click a facet</span>
+  </div>
+
+  <img class="fallback" src="assets/trihedron-mark.svg" alt="Trihedron logo" width="240" height="270">
+
+  <!-- The story. Each chapter is one screen tall; scroll position drives the 3D scene. -->
+  <main class="story">
+    <section class="chapter chapter--hero" data-index="0">
+      <div class="chapter__inner">
+        <span class="eyebrow">Engineering Solutions Group</span>
+        <h1>Trihedron</h1>
+        <p>Experts in automotive and manufacturing manpower solutions, locally and abroad.</p>
+      </div>
+    </section>
+
+    <section class="chapter chapter--top" data-index="1">
+      <div class="chapter__inner">
+        <span class="eyebrow">01 · Three facets</span>
+        <h2>One solution, engineered from three angles.</h2>
+        <p>Each facet of the business is led by a director who has worked on the factory floor. <strong>Click a facet</strong> to explore it.</p>
+      </div>
+    </section>
+
+    <section class="chapter" data-index="2">
+      <div class="chapter__inner">
+        <span class="eyebrow">02 · Global footprint</span>
+        <h2>From Gqeberha to the world's production lines.</h2>
+        <p>Headquartered in South Africa, with our first subsidiary abroad, <strong>Trihedron Systems LLC</strong>, registered in Texas in December 2022.</p>
+        <ul class="chips">
+          <li class="is-hq">South Africa</li><li>USA</li><li>Canada</li><li>Mexico</li><li>Brazil</li><li>United Kingdom</li><li>Germany</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" data-index="3">
+      <div class="chapter__inner">
+        <span class="eyebrow">03 · Track record</span>
+        <h2>Placements that keep production lines running.</h2>
+        <div class="stats">
+          <div><strong><span data-count="40">0</span>+</strong><span>National placements</span></div>
+          <div><strong><span data-count="9">0</span></strong><span>International placements</span></div>
+          <div><strong><span data-count="6">0</span></strong><span>Countries serviced</span></div>
+        </div>
+        <blockquote>
+          <p>“I appreciate the trustful handling and absolute reliability of the cooperation with Trihedron.”</p>
+          <footer>Michael Mayer · Technical Head of Service &amp; Support, ZEISS</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="chapter" data-index="4">
+      <div class="chapter__inner chapter__inner--wide">
+        <span class="eyebrow">04 · Solutions</span>
+        <h2>Four ways we work with you.</h2>
+        <div class="cards">
+          <a class="card" href="https://www.trihedron.co.za/our-services/" style="--c:#48eb12"><b>Consulting</b><span>Vetted contract specialists in metrology, automation and the trades.</span></a>
+          <a class="card" href="https://www.trihedron.co.za/our-services/" style="--c:#ff3b28"><b>Permanent Placements</b><span>Experienced engineers added to your permanent team.</span></a>
+          <a class="card" href="https://www.trihedron.co.za/our-services/" style="--c:#00a7fa"><b>In-house Support</b><span>Automation and metrology professionals placed on site.</span></a>
+          <a class="card" href="https://www.trihedron.co.za/contact-us/" style="--c:#ffffff"><b>Website Development</b><span>Websites designed, built and hosted on our in-house servers.</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter chapter--end" data-index="5">
+      <div class="chapter__inner">
+        <span class="eyebrow">05 · Contact</span>
+        <h2>Let's build your team.</h2>
+        <div class="actions">
+          <a class="btn btn--primary" href="https://www.trihedron.co.za/contact-us/">Request a callback</a>
+          <a class="btn" href="https://www.trihedron.co.za/vacancies/">View vacancies</a>
+        </div>
+        <p class="contact-line"><a href="tel:+27414508670">+27 (0)41 450 8670</a> · <a href="mailto:info@trihedron.co.za">info@trihedron.co.za</a> · Gqeberha, South Africa</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Trihedron Crystal": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "commandLineArgs": "-NoProfile -ExecutionPolicy Bypass -File \"..\\serve.ps1\" -Port 8090 -Open",
+      "workingDirectory": "$(ProjectDir)"
+    }
+  }
+}

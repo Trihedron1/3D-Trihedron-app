@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Visual Studio host for the Trihedron Crystal site (the folder above this one).
+       Ctrl+F5 runs ..\serve.ps1 in Windows PowerShell and opens http://localhost:8090.
+       No C# code is compiled or run (Windows Smart App Control blocks unsigned local builds). -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <RootNamespace>TrihedronCrystal</RootNamespace>
+    <NoWarn>$(NoWarn);CS2008</NoWarn>
+  </PropertyGroup>
+
+  <!-- Show the site files in Solution Explorer under "Site" -->
+  <ItemGroup>
+    <None Include="..\*.html;..\README.md;..\serve.ps1" LinkBase="Site" />
+    <None Include="..\css\**\*" LinkBase="Site\css" />
+    <None Include="..\js\**\*" LinkBase="Site\js" />
+    <None Include="..\assets\**\*" LinkBase="Site\assets" />
+  </ItemGroup>
+
+</Project>
